@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bear.hospital.mapper.DiagnosisRecordMapper">
+
+    <!-- 结果映射 -->
+    <resultMap id="BaseResultMap" type="com.bear.hospital.pojo.DiagnosisRecord">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="p_id" property="pId" jdbcType="INTEGER"/>
+        <result column="symptoms" property="symptoms" jdbcType="VARCHAR"/>
+        <result column="diseases" property="diseases" jdbcType="VARCHAR"/>
+        <result column="department" property="department" jdbcType="VARCHAR"/>
+        <result column="severity" property="severity" jdbcType="VARCHAR"/>
+        <result column="need_immediate_care" property="needImmediateCare" jdbcType="TINYINT"/>
+        <result column="advice" property="advice" jdbcType="VARCHAR"/>
+        <result column="reasoning" property="reasoning" jdbcType="VARCHAR"/>
+        <result column="diagnosis_time" property="diagnosisTime" jdbcType="TIMESTAMP"/>
+        <result column="session_id" property="sessionId" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 基础列定义 -->
+    <sql id="Base_Column_List">
+        id, p_id, symptoms, diseases, department, severity,
+        need_immediate_care, advice, reasoning, diagnosis_time, session_id
+    </sql>
+
+    <!-- 根据会话ID查询诊断记录 -->
+    <select id="findBySessionId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM ai_diagnosis_record
+        WHERE session_id = #{sessionId}
+        ORDER BY diagnosis_time DESC
+        LIMIT 10
+    </select>
+
+    <!-- 根据患者ID查询最近的诊断记录 -->
+    <select id="findRecentByPId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM ai_diagnosis_record
+        WHERE p_id = #{pId}
+        ORDER BY diagnosis_time DESC
+        LIMIT 10
+    </select>
+
+    <!-- 统计患者的诊断次数 -->
+    <select id="countByPId" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM ai_diagnosis_record
+        WHERE p_id = #{pId}
+    </select>
+
+</mapper>

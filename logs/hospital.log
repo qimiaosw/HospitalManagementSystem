@@ -1,0 +1,676 @@
+2025-12-29 10:26:34 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h13m49s258ms314µs700ns).
+2025-12-29 11:38:46 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-12-29 11:38:47 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-29 11:38:47 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-29 11:39:00 [main] INFO  c.b.h.HospitalManagerApplication - Starting HospitalManagerApplication on LAPTOP-SLTC3N1I with PID 60404 (started by lenovo in D:\医院管理系统)
+2025-12-29 11:39:00 [main] DEBUG c.b.h.HospitalManagerApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2025-12-29 11:39:00 [main] INFO  c.b.h.HospitalManagerApplication - No active profile set, falling back to default profiles: default
+2025-12-29 11:39:00 [background-preinit] WARN  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatQrStateMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatUserMapper'.
+2025-12-29 11:39:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-12-29 11:39:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-29 11:39:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\AdminMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\ArrangeMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\BedMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\CheckMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DoctorMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DrugMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\OrderMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\PatientMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 11:39:01 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 11:39:01 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.bear.hospital.mapper.AdminMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'adminMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'arrangeMapper' and 'com.bear.hospital.mapper.ArrangeMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'arrangeMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'bedMapper' and 'com.bear.hospital.mapper.BedMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'bedMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'checkMapper' and 'com.bear.hospital.mapper.CheckMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'checkMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'doctorMapper' and 'com.bear.hospital.mapper.DoctorMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'doctorMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'drugMapper' and 'com.bear.hospital.mapper.DrugMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'drugMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'com.bear.hospital.mapper.OrderMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'patientMapper' and 'com.bear.hospital.mapper.PatientMapper' mapperInterface
+2025-12-29 11:39:01 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'patientMapper'.
+2025-12-29 11:39:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-29 11:39:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2025-12-29 11:39:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-29 11:39:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2025-12-29 11:39:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-29 11:39:02 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1673 ms
+2025-12-29 11:39:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-29 11:39:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-29 11:39:03 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-12-29 11:39:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path ''
+2025-12-29 11:39:03 [main] INFO  c.b.h.HospitalManagerApplication - Started HospitalManagerApplication in 3.917 seconds (JVM running for 6.435)
+2025-12-29 11:39:12 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-29 11:39:12 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-29 11:39:12 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2025-12-29 14:51:31 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h59m58s127ms130µs200ns).
+2025-12-29 14:53:04 [http-nio-9999-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+### The error may exist in com/bear/hospital/mapper/PatientMapper.java (best guess)
+### The error may involve com.bear.hospital.mapper.PatientMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO patient  ( p_password, p_name, p_gender, p_card, p_email, p_phone, p_state, p_birthday, p_age )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+; Field 'p_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'p_id' doesn't have a default value] with root cause
+java.sql.SQLException: Field 'p_id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy110.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy109.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:107)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.insert(Unknown Source)
+	at com.bear.hospital.service.serviceImpl.PatientServiceImpl.addPatient(PatientServiceImpl.java:105)
+	at com.bear.hospital.controller.PatientController.addPatient(PatientController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-29 14:53:05 [http-nio-9999-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+### The error may exist in com/bear/hospital/mapper/PatientMapper.java (best guess)
+### The error may involve com.bear.hospital.mapper.PatientMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO patient  ( p_password, p_name, p_gender, p_card, p_email, p_phone, p_state, p_birthday, p_age )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+; Field 'p_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'p_id' doesn't have a default value] with root cause
+java.sql.SQLException: Field 'p_id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy110.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy109.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:107)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.insert(Unknown Source)
+	at com.bear.hospital.service.serviceImpl.PatientServiceImpl.addPatient(PatientServiceImpl.java:105)
+	at com.bear.hospital.controller.PatientController.addPatient(PatientController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-29 14:57:40 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-12-29 14:57:40 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-29 14:57:40 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-29 14:57:49 [main] INFO  c.b.h.HospitalManagerApplication - Starting HospitalManagerApplication on LAPTOP-SLTC3N1I with PID 44784 (started by lenovo in D:\医院管理系统)
+2025-12-29 14:57:49 [main] DEBUG c.b.h.HospitalManagerApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2025-12-29 14:57:49 [main] INFO  c.b.h.HospitalManagerApplication - No active profile set, falling back to default profiles: default
+2025-12-29 14:57:49 [background-preinit] WARN  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatQrStateMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatUserMapper'.
+2025-12-29 14:57:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-12-29 14:57:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-29 14:57:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 Redis repository interfaces.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\AdminMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\ArrangeMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\BedMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\CheckMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DoctorMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DrugMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\OrderMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\PatientMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 14:57:50 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 14:57:50 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.bear.hospital.mapper.AdminMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'adminMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'arrangeMapper' and 'com.bear.hospital.mapper.ArrangeMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'arrangeMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'bedMapper' and 'com.bear.hospital.mapper.BedMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'bedMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'checkMapper' and 'com.bear.hospital.mapper.CheckMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'checkMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'doctorMapper' and 'com.bear.hospital.mapper.DoctorMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'doctorMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'drugMapper' and 'com.bear.hospital.mapper.DrugMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'drugMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'com.bear.hospital.mapper.OrderMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'patientMapper' and 'com.bear.hospital.mapper.PatientMapper' mapperInterface
+2025-12-29 14:57:50 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'patientMapper'.
+2025-12-29 14:57:50 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-29 14:57:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2025-12-29 14:57:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-29 14:57:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2025-12-29 14:57:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-29 14:57:51 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1676 ms
+2025-12-29 14:57:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-29 14:57:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-29 14:57:52 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-12-29 14:57:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path ''
+2025-12-29 14:57:52 [main] INFO  c.b.h.HospitalManagerApplication - Started HospitalManagerApplication in 3.99 seconds (JVM running for 4.939)
+2025-12-29 14:58:47 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-29 14:58:47 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-29 14:58:47 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2025-12-29 14:58:47 [http-nio-9999-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'patient' on field 'pId': rejected value [2415964854]; codes [typeMismatch.patient.pId,typeMismatch.pId,typeMismatch.int,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.pId,pId]; arguments []; default message [pId]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'pId'; nested exception is java.lang.NumberFormatException: For input string: "2415964854"]]
+2025-12-29 14:59:56 [http-nio-9999-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+### The error may exist in com/bear/hospital/mapper/PatientMapper.java (best guess)
+### The error may involve com.bear.hospital.mapper.PatientMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO patient  ( p_password, p_name, p_gender, p_card, p_email, p_phone, p_state, p_birthday, p_age )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+; Field 'p_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'p_id' doesn't have a default value] with root cause
+java.sql.SQLException: Field 'p_id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy111.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy110.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:107)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy109.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.insert(Unknown Source)
+	at com.bear.hospital.service.serviceImpl.PatientServiceImpl.addPatient(PatientServiceImpl.java:105)
+	at com.bear.hospital.controller.PatientController.addPatient(PatientController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-29 15:00:56 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-12-29 15:00:56 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-29 15:00:56 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-12-29 15:01:02 [main] INFO  c.b.h.HospitalManagerApplication - Starting HospitalManagerApplication on LAPTOP-SLTC3N1I with PID 52076 (started by lenovo in D:\医院管理系统)
+2025-12-29 15:01:02 [main] DEBUG c.b.h.HospitalManagerApplication - Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2025-12-29 15:01:02 [main] INFO  c.b.h.HospitalManagerApplication - No active profile set, falling back to default profiles: default
+2025-12-29 15:01:03 [background-preinit] WARN  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatQrStateMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'wechatUserMapper'.
+2025-12-29 15:01:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-12-29 15:01:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-29 15:01:03 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\AdminMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\ArrangeMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\BedMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\CheckMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DoctorMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\DrugMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\OrderMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\PatientMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatQrStateMapper.class]
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [D:\医院管理系统\medical-master\target\classes\com\bear\hospital\mapper\WechatUserMapper.class]
+2025-12-29 15:01:03 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatQrStateMapper' and 'com.bear.hospital.mapper.WechatQrStateMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 15:01:03 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'wechatUserMapper' and 'com.bear.hospital.mapper.WechatUserMapper' mapperInterface. Bean already defined with the same name!
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'adminMapper' and 'com.bear.hospital.mapper.AdminMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'adminMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'arrangeMapper' and 'com.bear.hospital.mapper.ArrangeMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'arrangeMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'bedMapper' and 'com.bear.hospital.mapper.BedMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'bedMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'checkMapper' and 'com.bear.hospital.mapper.CheckMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'checkMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'doctorMapper' and 'com.bear.hospital.mapper.DoctorMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'doctorMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'drugMapper' and 'com.bear.hospital.mapper.DrugMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'drugMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'orderMapper' and 'com.bear.hospital.mapper.OrderMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'orderMapper'.
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'patientMapper' and 'com.bear.hospital.mapper.PatientMapper' mapperInterface
+2025-12-29 15:01:03 [main] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'patientMapper'.
+2025-12-29 15:01:04 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-29 15:01:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9999 (http)
+2025-12-29 15:01:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-29 15:01:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.30]
+2025-12-29 15:01:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-29 15:01:04 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1431 ms
+2025-12-29 15:01:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-29 15:01:04 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-29 15:01:05 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-12-29 15:01:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9999 (http) with context path ''
+2025-12-29 15:01:05 [main] INFO  c.b.h.HospitalManagerApplication - Started HospitalManagerApplication in 3.453 seconds (JVM running for 4.255)
+2025-12-29 15:01:11 [http-nio-9999-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-29 15:01:11 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-29 15:01:11 [http-nio-9999-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2025-12-29 15:01:12 [http-nio-9999-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+### The error may exist in com/bear/hospital/mapper/PatientMapper.java (best guess)
+### The error may involve com.bear.hospital.mapper.PatientMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO patient  ( p_password, p_name, p_gender, p_card, p_email, p_phone, p_state, p_birthday, p_age )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+; Field 'p_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'p_id' doesn't have a default value] with root cause
+java.sql.SQLException: Field 'p_id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy108.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:107)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy106.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.insert(Unknown Source)
+	at com.bear.hospital.service.serviceImpl.PatientServiceImpl.addPatient(PatientServiceImpl.java:105)
+	at com.bear.hospital.controller.PatientController.addPatient(PatientController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-29 15:02:56 [http-nio-9999-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+### The error may exist in com/bear/hospital/mapper/PatientMapper.java (best guess)
+### The error may involve com.bear.hospital.mapper.PatientMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO patient  ( p_password, p_name, p_gender, p_card, p_email, p_phone, p_state, p_birthday, p_age )  VALUES  ( ?, ?, ?, ?, ?, ?, ?, ?, ? )
+### Cause: java.sql.SQLException: Field 'p_id' doesn't have a default value
+; Field 'p_id' doesn't have a default value; nested exception is java.sql.SQLException: Field 'p_id' doesn't have a default value] with root cause
+java.sql.SQLException: Field 'p_id' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at jdk.proxy3/jdk.proxy3.$Proxy108.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.update(Unknown Source)
+	at com.baomidou.mybatisplus.core.executor.MybatisSimpleExecutor.doUpdate(MybatisSimpleExecutor.java:54)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor.intercept(OptimisticLockerInterceptor.java:107)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at jdk.proxy2/jdk.proxy2.$Proxy106.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	at jdk.proxy2/jdk.proxy2.$Proxy82.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:271)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:58)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:62)
+	at jdk.proxy2/jdk.proxy2.$Proxy86.insert(Unknown Source)
+	at com.bear.hospital.service.serviceImpl.PatientServiceImpl.addPatient(PatientServiceImpl.java:105)
+	at com.bear.hospital.controller.PatientController.addPatient(PatientController.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-12-29 15:04:39 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-12-29 15:04:39 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-29 15:04:39 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

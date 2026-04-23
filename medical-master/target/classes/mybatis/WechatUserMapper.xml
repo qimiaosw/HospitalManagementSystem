@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bear.hospital.mapper.WechatUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.bear.hospital.pojo.WechatUser">
+        <id column="w_id" property="wId" jdbcType="INTEGER"/>
+        <result column="w_open_id" property="wOpenId" jdbcType="VARCHAR"/>
+        <result column="w_union_id" property="wUnionId" jdbcType="VARCHAR"/>
+        <result column="w_nickname" property="wNickname" jdbcType="VARCHAR"/>
+        <result column="w_avatar" property="wAvatar" jdbcType="VARCHAR"/>
+        <result column="w_gender" property="wGender" jdbcType="INTEGER"/>
+        <result column="w_country" property="wCountry" jdbcType="VARCHAR"/>
+        <result column="w_province" property="wProvince" jdbcType="VARCHAR"/>
+        <result column="w_city" property="wCity" jdbcType="VARCHAR"/>
+        <result column="w_access_token" property="wAccessToken" jdbcType="VARCHAR"/>
+        <result column="w_refresh_token" property="wRefreshToken" jdbcType="VARCHAR"/>
+        <result column="p_id" property="pId" jdbcType="INTEGER"/>
+        <result column="d_id" property="dId" jdbcType="INTEGER"/>
+        <result column="a_id" property="aId" jdbcType="INTEGER"/>
+        <result column="w_bind_type" property="wBindType" jdbcType="VARCHAR"/>
+        <result column="w_create_time" property="wCreateTime" jdbcType="TIMESTAMP"/>
+        <result column="w_update_time" property="wUpdateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 根据openid查询微信用户 -->
+    <select id="findByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_user
+        WHERE w_open_id = #{wOpenId}
+    </select>
+
+    <!-- 根据unionid查询微信用户 -->
+    <select id="findByUnionId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_user
+        WHERE w_union_id = #{wUnionId}
+    </select>
+
+    <!-- 根据患者ID查询微信绑定 -->
+    <select id="findByPatientId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_user
+        WHERE p_id = #{pId}
+    </select>
+
+    <!-- 根据医生ID查询微信绑定 -->
+    <select id="findByDoctorId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_user
+        WHERE d_id = #{dId}
+    </select>
+
+    <!-- 根据管理员ID查询微信绑定 -->
+    <select id="findByAdminId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_user
+        WHERE a_id = #{aId}
+    </select>
+
+    <!-- 插入微信用户 -->
+    <insert id="insert" parameterType="com.bear.hospital.pojo.WechatUser"
+            useGeneratedKeys="true" keyProperty="wId">
+        INSERT INTO wechat_user
+        (w_open_id, w_union_id, w_nickname, w_avatar, w_gender, w_country, w_province, w_city,
+         w_access_token, w_refresh_token, w_create_time)
+        VALUES
+            (#{wOpenId}, #{wUnionId}, #{wNickname}, #{wAvatar}, #{wGender}, #{wCountry}, #{wProvince}, #{wCity},
+             #{wAccessToken}, #{wRefreshToken}, NOW())
+    </insert>
+
+    <!-- 更新微信用户信息 -->
+    <update id="update" parameterType="com.bear.hospital.pojo.WechatUser">
+        UPDATE wechat_user
+        <set>
+            <if test="wNickname != null">w_nickname = #{wNickname},</if>
+            <if test="wAvatar != null">w_avatar = #{wAvatar},</if>
+            <if test="wGender != null">w_gender = #{wGender},</if>
+            <if test="wCountry != null">w_country = #{wCountry},</if>
+            <if test="wProvince != null">w_province = #{wProvince},</if>
+            <if test="wCity != null">w_city = #{wCity},</if>
+            <if test="wAccessToken != null">w_access_token = #{wAccessToken},</if>
+            <if test="wRefreshToken != null">w_refresh_token = #{wRefreshToken},</if>
+            w_update_time = NOW()
+        </set>
+        WHERE w_open_id = #{wOpenId}
+    </update>
+
+    <!-- 绑定患者 -->
+    <update id="bindPatient">
+        UPDATE wechat_user
+        SET p_id = #{pId},
+            d_id = NULL,
+            a_id = NULL,
+            w_bind_type = 'patient',
+            w_update_time = NOW()
+        WHERE w_open_id = #{wOpenId}
+    </update>
+
+    <!-- 绑定医生 -->
+    <update id="bindDoctor">
+        UPDATE wechat_user
+        SET d_id = #{dId},
+            p_id = NULL,
+            a_id = NULL,
+            w_bind_type = 'doctor',
+            w_update_time = NOW()
+        WHERE w_open_id = #{wOpenId}
+    </update>
+
+    <!-- 绑定管理员 -->
+    <update id="bindAdmin">
+        UPDATE wechat_user
+        SET a_id = #{aId},
+            p_id = NULL,
+            d_id = NULL,
+            w_bind_type = 'admin',
+            w_update_time = NOW()
+        WHERE w_open_id = #{wOpenId}
+    </update>
+
+    <!-- 解除绑定 -->
+    <update id="unbind" parameterType="java.lang.String">
+        UPDATE wechat_user
+        SET p_id = NULL,
+            d_id = NULL,
+            a_id = NULL,
+            w_bind_type = NULL,
+            w_update_time = NOW()
+        WHERE w_open_id = #{wOpenId}
+    </update>
+
+</mapper>

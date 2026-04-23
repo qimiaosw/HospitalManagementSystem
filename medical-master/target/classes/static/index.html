@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="医院管理系统">
+
+    <!-- 添加支付宝回调处理脚本 -->
+    <script>
+        // 检查当前URL是否包含支付宝回调参数
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const method = urlParams.get('method');
+            const outTradeNo = urlParams.get('out_trade_no');
+
+            // 如果是支付宝支付回调
+            if (method === 'alipay.trade.page.pay.return' && outTradeNo) {
+                console.log('检测到支付宝支付回调，订单号:', outTradeNo);
+
+                // 获取完整的支付宝参数
+                const params = {};
+                urlParams.forEach((value, key) => {
+                    params[key] = value;
+                });
+
+                // 保存到sessionStorage，供Vue应用使用
+                sessionStorage.setItem('alipayCallbackParams', JSON.stringify(params));
+
+                // 跳转到Vue应用的支付结果页面
+                const redirectPath = `/#/payment/success?out_trade_no=${encodeURIComponent(outTradeNo)}`;
+
+                // 如果是hash模式，直接修改hash
+                if (window.location.hash) {
+                    window.location.hash = redirectPath;
+                } else {
+                    // 否则完整重定向
+                    const vueAppUrl = window.location.origin + redirectPath;
+                    window.location.replace(vueAppUrl);
+                }
+            }
+        })();
+    </script>
+
+    <!-- 添加图标 -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>医院管理系统</title>
+
+    <!-- 添加基础样式防止闪烁 -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #app {
+            min-height: 100vh;
+        }
+
+        /* 支付宝回调加载样式 */
+        .alipay-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1890ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: #666;
+            font-size: 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+</head>
+<body>
+<!-- 支付宝回调加载遮罩 -->
+<div id="alipay-loading" class="alipay-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">正在处理支付结果...</div>
+</div>
+
+<!-- Vue应用根容器 -->
+<div id="app"></div>
+
+<!-- built files will be auto injected -->
+
+<!-- 支付宝回调处理 -->
+<script>
+    // 页面加载完成后检查支付宝回调
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const method = urlParams.get('method');
+        const outTradeNo = urlParams.get('out_trade_no');
+
+        if (method === 'alipay.trade.page.pay.return' && outTradeNo) {
+            console.log('支付宝回调处理中...');
+
+            // 显示加载动画
+            const loadingEl = document.getElementById('alipay-loading');
+            if (loadingEl) {
+                loadingEl.style.display = 'flex';
+            }
+
+            // 获取完整的URL参数
+            const params = {};
+            urlParams.forEach((value, key) => {
+                params[key] = decodeURIComponent(value);
+            });
+
+            // 验证签名等参数
+            console.log('支付宝回调参数:', params);
+
+            // 向后端验证支付结果
+            if (window.fetch) {
+                fetch('/api/payment/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        outTradeNo: outTradeNo,
+                        tradeNo: params.trade_no,
+                        totalAmount: params.total_amount,
+                        timestamp: params.timestamp
+                    })
+                }).then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('验证失败');
+                }).then(data => {
+                    console.log('支付验证结果:', data);
+
+                    // 保存验证结果
+                    sessionStorage.setItem('paymentVerifyResult', JSON.stringify(data));
+                    sessionStorage.setItem('alipayCallbackParams', JSON.stringify(params));
+
+                }).catch(error => {
+                    console.warn('支付验证失败，继续跳转:', error);
+                    sessionStorage.setItem('alipayCallbackParams', JSON.stringify(params));
+                }).finally(() => {
+                    // 跳转到支付成功页面
+                    const redirectPath = `/#/payment/success?out_trade_no=${encodeURIComponent(outTradeNo)}`;
+                    window.location.hash = redirectPath;
+
+                    // 隐藏加载动画
+                    if (loadingEl) {
+                        loadingEl.style.display = 'none';
+                    }
+                });
+            } else {
+                // 不支持fetch，直接跳转
+                const redirectPath = `/#/payment/success?out_trade_no=${encodeURIComponent(outTradeNo)}`;
+                window.location.hash = redirectPath;
+            }
+        }
+    });
+</script>
+</body>
+</html>

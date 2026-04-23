@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bear.hospital.mapper.ChatMessageMapper">
+
+    <!-- 结果映射 -->
+    <resultMap id="BaseResultMap" type="com.bear.hospital.pojo.ChatMessage">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="p_id" property="pId" jdbcType="INTEGER"/>
+        <result column="session_id" property="sessionId" jdbcType="VARCHAR"/>
+        <result column="role" property="role" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="message_time" property="messageTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- 基础列定义 -->
+    <sql id="Base_Column_List">
+        id, p_id, session_id, role, content, type, message_time
+    </sql>
+
+    <!-- 根据会话ID查询所有消息（按时间正序） -->
+    <select id="findBySessionId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM ai_chat_message
+        WHERE session_id = #{sessionId}
+        ORDER BY message_time ASC
+    </select>
+
+    <!-- 根据会话ID和患者ID查询所有消息 -->
+    <select id="findBySessionIdAndPId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM ai_chat_message
+        WHERE session_id = #{sessionId}
+        AND p_id = #{pId}
+        ORDER BY message_time ASC
+    </select>
+
+    <!-- 查询患者最近的会话列表 -->
+    <select id="findRecentSessionsByPId" resultType="java.lang.String">
+        SELECT DISTINCT session_id
+        FROM ai_chat_message
+        WHERE p_id = #{pId}
+        ORDER BY message_time DESC
+            LIMIT 10
+    </select>
+
+    <!-- 根据会话ID删除所有消息 -->
+    <delete id="deleteBySessionId">
+        DELETE FROM ai_chat_message
+        WHERE session_id = #{sessionId}
+    </delete>
+
+    <!-- 根据会话ID和患者ID删除所有消息 -->
+    <delete id="deleteBySessionIdAndPId">
+        DELETE FROM ai_chat_message
+        WHERE session_id = #{sessionId}
+          AND p_id = #{pId}
+    </delete>
+
+</mapper>

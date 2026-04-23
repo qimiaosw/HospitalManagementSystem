@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bear.hospital.mapper.WechatQrStateMapper">
+
+    <resultMap id="BaseResultMap" type="com.bear.hospital.pojo.WechatQrState">
+        <id column="qr_id" property="qrId" jdbcType="INTEGER"/>
+        <result column="qr_uuid" property="qrUuid" jdbcType="VARCHAR"/>
+        <result column="qr_state" property="qrState" jdbcType="VARCHAR"/>
+        <result column="qr_status" property="qrStatus" jdbcType="INTEGER"/>
+        <result column="w_open_id" property="wOpenId" jdbcType="VARCHAR"/>
+        <result column="qr_user_info" property="qrUserInfo" jdbcType="VARCHAR"/>
+        <result column="qr_system_token" property="qrSystemToken" jdbcType="VARCHAR"/>
+        <result column="qr_create_time" property="qrCreateTime" jdbcType="BIGINT"/>
+        <result column="qr_expire_time" property="qrExpireTime" jdbcType="BIGINT"/>
+        <result column="qr_scan_time" property="qrScanTime" jdbcType="BIGINT"/>
+        <result column="qr_login_time" property="qrLoginTime" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <!-- 插入二维码状态 -->
+    <insert id="insert" parameterType="com.bear.hospital.pojo.WechatQrState"
+            useGeneratedKeys="true" keyProperty="qrId">
+        INSERT INTO wechat_qr_state
+            (qr_uuid, qr_state, qr_status, qr_create_time, qr_expire_time)
+        VALUES
+            (#{qrUuid}, #{qrState}, #{qrStatus}, #{qrCreateTime}, #{qrExpireTime})
+    </insert>
+
+    <!-- 根据qrUuid查询 -->
+    <select id="findByQrUuid" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_qr_state
+        WHERE qr_uuid = #{qrUuid}
+    </select>
+
+    <!-- 根据qrState查询 -->
+    <select id="findByQrState" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT *
+        FROM wechat_qr_state
+        WHERE qr_state = #{qrState}
+    </select>
+
+    <!-- 更新状态 -->
+    <update id="update" parameterType="com.bear.hospital.pojo.WechatQrState">
+        UPDATE wechat_qr_state
+        <set>
+            <if test="qrStatus != null">qr_status = #{qrStatus},</if>
+            <if test="wOpenId != null">w_open_id = #{wOpenId},</if>
+            <if test="qrUserInfo != null">qr_user_info = #{qrUserInfo},</if>
+            <if test="qrSystemToken != null">qr_system_token = #{qrSystemToken},</if>
+            <if test="qrScanTime != null">qr_scan_time = #{qrScanTime},</if>
+            <if test="qrLoginTime != null">qr_login_time = #{qrLoginTime},</if>
+        </set>
+        WHERE qr_uuid = #{qrUuid}
+    </update>
+
+    <!-- 删除过期记录 -->
+    <delete id="deleteExpired" parameterType="java.lang.Long">
+        DELETE FROM wechat_qr_state
+        WHERE qr_expire_time <![CDATA[<]]> #{currentTime}
+    </delete>
+
+</mapper>

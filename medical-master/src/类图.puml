@@ -1,0 +1,368 @@
+@startuml HospitalManagementSystem
+
+package "实体层" {
+  class Admin {
+    - Integer aId
+    - String aPassword
+    - String aName
+    - String aGender
+    - String aCard
+    - String aPhone
+    - String aEmail
+    + get/set方法()
+  }
+
+  class Patient {
+    - Integer pId
+    - String pPassword
+    - String pName
+    - String pGender
+    - Date pBirthday
+    - Integer pAge
+    - String pPhone
+    - String pCard
+    - String pEmail
+    - Integer pState
+    + get/set方法()
+  }
+
+  class Doctor {
+    - Integer dId
+    - String dPassword
+    - String dName
+    - String dGender
+    - String dPhone
+    - String dCard
+    - String dEmail
+    - String dPost
+    - String dIntroduction
+    - String dSection
+    - Integer dState
+    - BigDecimal dPrice
+    - Integer dPeople
+    - Integer dStar
+    - BigDecimal dAvgStar
+    + get/set方法()
+  }
+
+  class Order {
+    - Integer oId
+    - Integer pId
+    - Integer dId
+    - String oRecord
+    - Date oStart
+    - Date oEnd
+    - Integer oState
+    - String oDrug
+    - String oCheck
+    - BigDecimal oTotalPrice
+    - Integer oPriceState
+    - String oAdvice
+    + get/set方法()
+  }
+
+  class Bed {
+    - Integer bId
+    - Integer pId
+    - Integer dId
+    - Integer bState
+    - Date bStart
+    - String bReason
+    - Integer version
+    + get/set方法()
+  }
+
+  class Arrange {
+    - String arId
+    - String arTime
+    - Integer dId
+    + get/set方法()
+  }
+
+  class Drug {
+    - Integer drId
+    - String drName
+    - BigDecimal drPrice
+    - Integer drNumber
+    - String drUnit
+    - String drPublisher
+    + get/set方法()
+  }
+
+  class CheckItem {
+    - Integer chId
+    - String chName
+    - BigDecimal chPrice
+    + get/set方法()
+  }
+
+  class Result {
+    - Integer code
+    - String message
+    - Object data
+    + success()
+    + error()
+    + get/set方法()
+  }
+}
+
+package "数据访问层" {
+  interface AdminMapper {
+    + findAll()
+    + findById()
+    + add()
+    + update()
+    + delete()
+  }
+
+  interface PatientMapper {
+    + findAll()
+    + findById()
+    + add()
+    + delete()
+    + countGender()
+  }
+
+  interface DoctorMapper {
+    + findAll()
+    + findById()
+    + add()
+    + update()
+    + delete()
+    + findBySection()
+    + updateStar()
+    + importExcel()
+    + exportExcel()
+  }
+
+  interface OrderMapper {
+    + findAll()
+    + findByPid()
+    + findByDid()
+    + add()
+    + update()
+    + delete()
+    + findToday()
+  }
+
+  interface BedMapper {
+    + findAll()
+    + findNullBed()
+    + add()
+    + update()
+    + delete()
+    + findByPid()
+  }
+
+  interface ArrangeMapper {
+    + findByTime()
+    + add()
+    + delete()
+  }
+
+  interface DrugMapper {
+    + findAll()
+    + findById()
+    + add()
+    + update()
+    + delete()
+  }
+
+  interface CheckItemMapper {
+    + findAll()
+    + findById()
+    + add()
+    + update()
+    + delete()
+  }
+}
+
+package "业务层" {
+  class AdminService {
+    - AdminMapper adminMapper
+    + listAdmins()
+    + getAdminById()
+    + saveAdmin()
+    + removeAdmin()
+  }
+
+  class PatientService {
+    - PatientMapper patientMapper
+    + listPatients()
+    + getPatientById()
+    + removePatient()
+    + countPatientGender()
+  }
+
+  class DoctorService {
+    - DoctorMapper doctorMapper
+    + listDoctors()
+    + getDoctorById()
+    + saveDoctor()
+    + removeDoctor()
+    + importDoctors()
+    + exportDoctors()
+    + updateDoctorStar()
+  }
+
+  class OrderService {
+    - OrderMapper orderMapper
+    - RedisTemplate redisTemplate
+    + listOrders()
+    + getOrderByPid()
+    + getTodayOrderByDid()
+    + saveOrder()
+    + updateOrder()
+    + updatePayState()
+    + addAdvice()
+  }
+
+  class BedService {
+    - BedMapper bedMapper
+    + listBeds()
+    + getNullBeds()
+    + saveBed()
+    + emptyBed()
+    + getBedByPid()
+    + applyBed()
+  }
+
+  class ArrangeService {
+    - ArrangeMapper arrangeMapper
+    + listArrangesByTime()
+    + saveArrange()
+    + removeArrange()
+  }
+
+  class DrugService {
+    - DrugMapper drugMapper
+    + listDrugs()
+    + getDrugById()
+    + saveDrug()
+    + removeDrug()
+  }
+
+  class CheckItemService {
+    - CheckItemMapper checkItemMapper
+    + listCheckItems()
+    + getCheckItemById()
+    + saveCheckItem()
+    + removeCheckItem()
+  }
+}
+
+package "控制层" {
+  class PublicController {
+    - PublicService publicService
+    + login()
+    + register()
+    + sendEmail()
+    + findPassword()
+  }
+
+  class AdminController {
+    - AdminService adminService
+    - DoctorService doctorService
+    - PatientService patientService
+    - OrderService orderService
+    - DrugService drugService
+    - CheckItemService checkItemService
+    - BedService bedService
+    - ArrangeService arrangeService
+    + listDoctors()
+    + saveDoctor()
+    + removeDoctor()
+    + importDoctors()
+    + exportDoctors()
+    + saveArrange()
+    + statistic()
+  }
+
+  class DoctorController {
+    - DoctorService doctorService
+    - OrderService orderService
+    - BedService bedService
+    + listTodayOrders()
+    + handleOrder()
+    + addAdvice()
+    + applyBed()
+    + listHistoryOrders()
+  }
+
+  class PatientController {
+    - PatientService patientService
+    - DoctorService doctorService
+    - OrderService orderService
+    + listDoctorsBySection()
+    + listDoctorsByArrange()
+    + saveOrder()
+    + listMyOrders()
+    + payOrder()
+    + getReport()
+    + scoreDoctor()
+  }
+}
+
+package "配置和工具类" {
+  class CorsConfig {
+    + addCorsMappings()
+  }
+
+  class LoginInterceptor {
+    - JwtUtil jwtUtil
+    + preHandle()
+  }
+
+  class JwtUtil {
+    + generateToken()
+    + verifyToken()
+    + parseToken()
+  }
+}
+
+' 依赖关系
+AdminService .up.|> AdminMapper
+PatientService .up.|> PatientMapper
+DoctorService .up.|> DoctorMapper
+OrderService .up.|> OrderMapper
+BedService .up.|> BedMapper
+ArrangeService .up.|> ArrangeMapper
+DrugService .up.|> DrugMapper
+CheckItemService .up.|> CheckItemMapper
+
+AdminController --> AdminService
+AdminController --> DoctorService
+AdminController --> PatientService
+AdminController --> OrderService
+AdminController --> DrugService
+AdminController --> CheckItemService
+AdminController --> BedService
+AdminController --> ArrangeService
+
+DoctorController --> DoctorService
+DoctorController --> OrderService
+DoctorController --> BedService
+
+PatientController --> PatientService
+PatientController --> DoctorService
+PatientController --> OrderService
+
+PublicController --> PublicService
+LoginInterceptor --> JwtUtil
+
+' 注释
+note top of Admin: 实体层：管理员信息
+note top of Patient: 实体层：患者信息
+note top of Doctor: 实体层：医生信息
+note top of Order: 实体层：挂号信息
+
+note top of AdminService: 业务层：管理员服务
+note top of PatientService: 业务层：患者服务
+note top of DoctorService: 业务层：医生服务
+note top of OrderService: 业务层：挂号服务
+
+note top of AdminController: 控制层：管理员控制器
+note top of DoctorController: 控制层：医生控制器
+note top of PatientController: 控制层：患者控制器
+
+@enduml

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bear.hospital.mapper.EmailMapper">
+
+    <!-- 根据手机号查询患者邮箱 -->
+    <select id="selectEmailByPhone" resultType="java.lang.String">
+        SELECT p_email
+        FROM patient
+        WHERE p_phone = #{phone}
+          AND p_state = 1
+            LIMIT 1
+    </select>
+
+    <!-- 根据手机号查询患者信息 -->
+    <select id="selectByPhone" resultType="com.bear.hospital.pojo.Patient">
+        SELECT *
+        FROM patient
+        WHERE p_phone = #{phone}
+          AND p_state = 1
+            LIMIT 1
+    </select>
+
+    <!-- 根据邮箱查询患者信息 -->
+    <select id="selectByEmail" resultType="com.bear.hospital.pojo.Patient">
+        SELECT *
+        FROM patient
+        WHERE p_email = #{email}
+          AND p_state = 1
+            LIMIT 1
+    </select>
+
+    <!-- 根据手机号查询患者ID -->
+    <select id="selectIdByPhone" resultType="java.lang.Integer">
+        SELECT p_id
+        FROM patient
+        WHERE p_phone = #{phone}
+          AND p_state = 1
+            LIMIT 1
+    </select>
+
+    <!-- 更新邮箱验证状态 -->
+    <update id="updateEmailVerified">
+        UPDATE patient
+        SET p_state = #{verified}
+        WHERE p_phone = #{phone}
+    </update>
+
+    <!-- 检查手机号是否已存在 -->
+    <select id="countByPhone" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM patient
+        WHERE p_phone = #{phone}
+          AND p_state = 1
+    </select>
+
+    <!-- 是否已存在 -->
+    <select id="countByEmail" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM patient
+        WHERE p_email = #{email}
+          AND p_state = 1
+    </select>
+
+    <!-- 绑定手机号和邮箱 -->
+    <update id="bindPhoneAndEmail">
+        UPDATE patient
+        SET p_email = #{email}
+        WHERE p_phone = #{phone}
+    </update>
+
+    <!-- 根据手机号更新邮箱 -->
+    <update id="updateEmailByPhone">
+        UPDATE patient
+        SET p_email = #{email}
+        WHERE p_phone = #{phone}
+    </update>
+
+    <!-- 获取所有绑定邮箱的患者 -->
+    <select id="selectAllBoundPatients" resultType="com.bear.hospital.pojo.Patient">
+        SELECT p_phone, p_email
+        FROM patient
+        WHERE p_email IS NOT NULL
+          AND p_state = 1
+    </select>
+
+    <!-- 根据手机号删除患者（软删除） -->
+    <update id="deleteByPhone">
+        UPDATE patient
+        SET p_state = 0
+        WHERE p_phone = #{phone}
+    </update>
+
+    <!-- 验证手机号和邮箱是否匹配 -->
+    <select id="verifyPhoneAndEmail" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM patient
+        WHERE p_phone = #{phone}
+          AND p_email = #{email}
+          AND p_state = 1
+    </select>
+
+    <!-- 批量查询手机号绑定的邮箱 -->
+    <select id="selectEmailsByPhones" resultType="java.util.Map">
+        SELECT p_phone, p_email
+        FROM patient
+        WHERE p_phone IN
+        <foreach collection="phones" item="phone" open="(" separator="," close=")">
+            #{phone}
+        </foreach>
+        AND p_state = 1
+    </select>
+
+    <!-- 统计已绑定邮箱的患者数量 -->
+    <select id="countBoundPatients" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM patient
+        WHERE p_email IS NOT NULL
+          AND p_state = 1
+    </select>
+    <!-- 根据邮箱查询手机号（新增） -->
+    <select id="selectPhoneByEmail" resultType="java.lang.String">
+        SELECT p_phone
+        FROM patient
+        WHERE p_email = #{email}
+          AND p_state = 1
+            LIMIT 1
+    </select>
+
+</mapper>

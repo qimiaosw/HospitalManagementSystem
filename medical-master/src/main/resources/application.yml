@@ -1,0 +1,126 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hospital?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 200565
+
+  web:
+    resources:
+      static-locations: classpath:/static/,classpath:/public/
+      cache:
+        period: 0
+    mvc:
+      static-path-pattern: /**
+  # ==================== 邮箱配置 ====================
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 2415931942@qq.com
+    password: sixdtftfgdgudiic
+    protocol: smtp
+    default-encoding: UTF-8
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        debug: true  # 开发时设为true，查看发送日志
+
+  # ==================== Redis配置 ====================
+  redis:
+    host: localhost
+    port: 6379
+    password:  # 如果没有密码就留空
+    database: 0
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 5
+
+# 应用自定义配置
+# 应用自定义配置
+app:
+  env: dev
+  payment:
+    # 前端页面地址
+    frontend-url: http://7eb0ad75.r39.cpolar.top
+    # 后端API地址 - 修改为您提供的地址
+    backend-url: http://ab4e864.r39.cpolar.top
+    # 支付成功重定向页
+    success-redirect-url: http://7eb0ad75.r39.cpolar.top/#/payment/success
+    # 支付失败重定向页
+    failed-redirect-url: http://7eb0ad75.r39.cpolar.top/#/payment/failed
+
+  email:
+    from-name: 医院挂号管理系统
+    code-expire-minutes: 10
+    bind-expire-days: 30
+  sms:
+    code:
+      resend-interval: 30
+      max-try-count: 100
+
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 打印SQL日志
+  type-aliases-package: com.bear.hospital.pojo
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# 日志配置
+logging:
+  level:
+    com.bear.hospital: debug  #
+    org.springframework.mail: debug
+    org.springframework.data.redis: debug
+    org.mybatis: debug
+  file:
+    name: logs/hospital-system.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+
+# 支付宝配置
+alipay:
+  appId: 9021000158691042
+  merchantPrivateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxD3CqE23A9fD+r02TbUbUIjkciqfdJV2pRSYcsJE4JwNXS0Kq3PeDVJ8pIhuS/LNHyvOzCbIWt0pzDhk7tknpn22V/eNAYFkSo/5DscPq8LbsUylgdjX0grno1V72oB5bLDJ6jLMgLIFIVe3O3a/JveMBd7qAtbmPDBSOupCxO6liMKd/34BkbEo9z/AaPQpND4pW1xLuvTjvO9aG+9EtxnKSyNefgkpbJDVaN1SJMvGPlD/LRXi85aW4yuw29SvQ7G88vnOsqu960q/xybsG5WzKPMRrqwrWyWVGJ+4/LIXl01cyHgAOAx+wCjGnxP75BP1b29dfPlQU2Csy11exAgMBAAECggEACifXj3nDztCMfR8y9OTMrjg0TGXLkQymnaHguL6L5cufDm+7qC86ZycAZgyVxk2GPvTuG3PP6iujMow5eEpRXPwO/g5s7XFZSo9rcxiMIzqhU1bFxcmh+J9S6H7sjnrKovIbBxpw38SNucdr93SRs6GXlqr2YJGLzh+kQjeDOxcXROJVyBvBB9QtfC7oi8wUR9pZQneWXBxOtUkvLGZCfbe4PjE6NfT3SGw7iguBoSRZagrrJgL72WOR40mwJoiwSwld5DLwZsyG49Ke2QsLFwAXMenyoQz8CA1vn3LBhHfbZ+sdng/6jReimwNmt8KKMJAW2y/T/J6ta8ncVbsjXQKBgQD2qP7uextb+ds6Om351n7JD0mRchq2D+GU61m0lsiXIRom2JgK+xqov0cMnkk0X+dm8zuFmwd8rYhVd9RstgRK8caucn28rKbtYMWQUHL2aeIphdTAC9jGAP5MYkf507ItwV+QeLjrlrrBoxEWgWk4ywPxpH7s1N1iADgBsEHyHwKBgQC3w8b1qxsZwKKLL/amVNzT8LSqllwCLXjEZFMnEwoZkNjWhxTIERXkHoTU8sAKu5UOF2LuBQ5A9IDYMo3LJrcSD5eO99NM2FD8bOXrJUMlLkO+QuX4l7E7tO+N96rEu3lDYt4MhJMCAVCyUXwEzQ7AuXXh4dARH+NcSjQkXK+cLwKBgCOv68KBWUIDcm6ISaUeHZXlelVq1uaEgbTUIFR6hGcpSOlZ6RWdowvLMPJobFsBjS9d/byk435sdQ84mSlpZFGbjY1rzzlfGX+6wprQqPFx/GDZliB7Fk//kMtoZNWGhX8NPVBfxxF+62Jcv3osGxc2eEmb7SlC2wz0zyWfZMstAoGAcy0t4oRf9AAc4IgrW40M63mOguzCtkqxysXmqDLyvZtfjPYVPGAZDGVkc+PCIff4MGDQDMb2bBfTOa5V2OJnE9bZ8y25LgzWlZ/ba0prjz40D2f2o5zP5NA+5Qg57BxkoKuy6L2fNj6EyX7w8EFl4b1b+TuDIXiPFCUeETxWhNkCgYEAtwbE5XoUZM/tU3ww7DDltLdiMccZtHvNSvipaND1iOeA7pErXTwcAIh6AWGvEJiNmpX2zL70dpJoOiX/J0yEmSMtTfclZcroeLmC6PU6kIxsth+XawM8NomYJGcnZLuzVmCaSmrNCWGA99cwRk/X1KeMCdT5Bt9hAGUs3VNgxKw=
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnYBi3LtDOahojLUakIm+EEpizv9b5xCLG3bHTgiM5LEDd2kai7j5wJTQ/4JSqxrXdwx3J05PGr2bHymLrsEzfUp+GHXk63HrEzHeYzleyz4TPKuo2Pbo2fvIi0TJbWndM0u1w1FRhRSaD9AmDpMmlyUwANYu4aSSM3TWjgg06NjqpTo0rZD3C4i7aWBPB3NPjZSJwcA8sYfsidP2tq5qoGEgq9GaBWW4Ae7x3Ozkz5vx00WgoqgwwnzS8fuDbo+AvXLEKPLCjaKzAVKd3dUIRRTt92oO7mMSD1/0wHyA3AXl+Oo5rzrhAqAs/FhS1GnW1+PkboOh3V5/fQ5LHJ6gqwIDAQAB
+  notifyUrl: http://ab4e864.r39.cpolar.top/payment/notify  # ✅ 修改为正确地址，移除 /api 前缀
+  returnUrl: http://ab4e864.r39.cpolar.top/payment/sync/return  # ✅ 修改为后端接口
+  signType: RSA2
+  charset: utf-8
+  gatewayUrl: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  timeoutExpress: 30m
+  productCode: FAST_INSTANT_TRADE_PAY
+
+zhipu:
+  api:
+    # 智谱AI API Key（需要替换为您的真实API Key）
+    # 获取地址：https://open.bigmodel.cn/
+    key: 4c6619187a9e4f98a3ba5532f8f809e2.ZIPsbh6X3uSHW7JP
+
+    # API地址
+    url: https://open.bigmodel.cn/api/paas/v4/chat/completions
+
+    # 模型名称
+    model: glm-4
+
+    # 温度参数（0.0-2.0，越高越随机）
+    temperature: 0.7
+
+    # 最大Token数
+    max-tokens: 2000
